@@ -7,48 +7,12 @@
     <title>Opret bruger </title>
 </head>
 <body>
-    <div>
-    <form action="">
-        <div class="container">  </div>
-            <h2> Opret dig her </h2>
+    <form>
+        <input id="username">
+        <input id="password">
+        <button type="button" onclick="getInfo()">Login</button>
 
-            <form action="">
-                <div class="form-item-username">
-                    <label> Fornavn:</label>
-                    <input type="text" name="firstName" id="firstName" placeholder="Fornavn">
-                    <label> Efternavn:</label>
-                    <input type="text" name="lastName" id="lastName" placeholder="Efternavn">
-                </div>
-
-                <div class="form-item">
-                    <label> Email:</label>
-                    <input type="email" name="email" id="email" placeholder="Email">
-                </div>
-
-                <div class="form-item">
-                    <!-- add a password format display-->
-                    <span class="pwd-format">
-                        8-15 AlpaNumeric Character 
-
-                    </span>
-                    <label> Password:</label>
-                    <input type="password" name="password" id="password" placeholder="Indsæt password">
-                    <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Bekræft password">
-                </div>
-
-                <div class="accept-box">
-                    <input type="checkbox" name="accept" id="accept">
-                    <p>Jeg accepterer <a href="#"> Regler og vilkår</a></p>
-                </div>
-
-                <div class="form-btns"></div>
-                <button class="signup" type="submit" disabled>Opret dig</button>
-                <div class="options">
-                    Har du allerede en account? <a href="#">Login her</a>
-                
-            </form>
-        </div>
-    </div>
-        
+    </form> 
+    <script src="index.js"></script>
 </body>
 </html>
