@@ -31,5 +31,4 @@ class DB {
     return this.users.find((x) => user.email == x.email);
   }
 }
-
 module.exports = new DB();
