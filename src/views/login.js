@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             localStorage.setItem("user", JSON.stringify(user));
             location.href = "/";
           } else {
-            window.alert("Forkert e-mailadresse eller adgangskode.");
+            window.alert("Ugyldig e-mailadresse eller adgangskode.");
           }
         })
         .catch(() => {
