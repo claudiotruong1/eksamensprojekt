@@ -1,30 +1,30 @@
 var fs = require("fs");
 
-const ABSOLUTE_PATH = __dirname + "/../../data";
-const USER_FILE = "/users.json";
+const PATH = __dirname + "/../../data";
+const userFile = "/users.json";
 
 class DB {
   constructor() {
-    this.users = this.openFile(USER_FILE);
+    this.users = this.openFile(userFile);
   }
 
   saveFile(fileName, contentString) {
-    fs.writeFileSync(ABSOLUTE_PATH + fileName, contentString);
+    fs.writeFileSync(PATH + fileName, contentString);
   }
 
   openFile(fileName) {
-    const file = fs.readFileSync(ABSOLUTE_PATH + fileName);
+    const file = fs.readFileSync(PATH + fileName);
     return JSON.parse(file);
   }
 
   saveUser(user) {
     this.users.push(user);
-    this.saveFile(USER_FILE, JSON.stringify(this.users));
+    this.saveFile(userFile, JSON.stringify(this.users));
   }
 
   deleteUser(user) {
     this.users = this.users.filter((x) => x.email != user.email);
-    this.saveFile(USER_FILE, JSON.stringify(this.users));
+    this.saveFile(userFile, JSON.stringify(this.users));
   }
 
   findUser(user) {
