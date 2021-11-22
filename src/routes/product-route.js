@@ -6,13 +6,13 @@ const db = require("./../database/productDB");
 router.post("/create", (req, res) => {
     console.log(req.body)
     const products = new productModel(req.body.product, req.body.price, req.body.category);
-    db.saveUser(products);
+    db.saveProduct(products);
     res.status(200).send(true);
 });
 
 router.delete("/delete", (req, res) => {
     const products = new productModel(req.body.product, req.body.price, req.body.category);
-    db.deleteUser(products);
+    db.deleteProduct(products);
     res.status(200).send(true);
 });
 
