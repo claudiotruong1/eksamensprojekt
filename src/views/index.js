@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
       const user = JSON.parse(localStorage.getItem("user"));
   
-      fetch("http://localhost:5000/users/delete", {
+      fetch("http://localhost:5005/users/delete", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -27,5 +27,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
           window.alert("Noget gik galt.");
         });
     });
-  });
-  
+
+    document.getElementById("logoutUser").addEventListener("submit", (event) => {
+        event.preventDefault();
+
+
+    if(user) {
+        localStorage.removeItem("user");
+        location.href ="/login.html";
+
+    };
+        });
+             });
+
+
+
