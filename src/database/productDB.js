@@ -3,7 +3,7 @@ var fs = require("fs");
 const PATH =__dirname + "/../../data";
 const productFile = "/products.json";
 
-class DB {
+class dataBase {
     constructor(){
         this.products = this.openFile(productFile);
     }
@@ -30,6 +30,29 @@ class DB {
     findProduct(ting) {
         return this.products.find((x) => ting.product == x.product);
     }
-}
 
-module.exports = new DB();
+    updateProduct(prod) {
+
+        var keys = Object.keys(this.products);
+        var prodsArray = this.products
+
+        keys.forEach(function(objKey){
+            var objValue = prodsArray[objKey]
+
+            if(objValue.id === prod.id) {
+                objValue.product = prod.product
+                objValue.price = prod.price
+            }
+        })
+
+        this.saveFile(productFile, JSON.stringify(prodsArray));
+    }
+
+    getProducts() {
+        return this.products
+    }
+};
+
+
+
+module.exports = new dataBase();
