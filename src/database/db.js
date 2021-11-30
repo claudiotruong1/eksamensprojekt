@@ -3,7 +3,7 @@ var fs = require("fs");
 const PATH = __dirname + "/../../data";
 const userFile = "/users.json";
 
-class DB {
+class dataBase {
   constructor() {
     this.users = this.openFile(userFile);
   }
@@ -31,4 +31,4 @@ class DB {
     return this.users.find((x) => user.email == x.email);
   }
 }
-module.exports = new DB();
+module.exports = new dataBase();
