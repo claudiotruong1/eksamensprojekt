@@ -6,8 +6,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       const password = document.getElementById("password").value;
   
       const user = {
+        id: Math.floor(Math.random() * 100000),
         email: email,
-        password: password,
+        password: password
       };
   
       fetch("http://localhost:5005/users/create", {
