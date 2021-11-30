@@ -4,19 +4,19 @@ const userModel = require("../userform/user");
 const db = require("../database/db");
 
 router.post("/create", (req, res) => {
-  const user = new userModel(req.body.email, req.body.password);
+  const user = new userModel(req.body.id, req.body.email, req.body.password);
   db.saveUser(user);
   res.status(200).send(true);
 });
 
 router.delete("/delete", (req, res) => {
-  const user = new userModel(req.body.email, req.body.password);
+  const user = new userModel(req.body.id, req.body.email, req.body.password);
   db.deleteUser(user);
   res.status(200).send(true);
 });
 
 router.post("/login", (req, res) => {
-  const user = new userModel(req.body.email, req.body.password);
+  const user = new userModel(req.body.id, req.body.email, req.body.password);
   const found = db.findUser(user);
   if (found) {
     if (user.password == found.password) {
