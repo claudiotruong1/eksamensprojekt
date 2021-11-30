@@ -6,7 +6,7 @@ const app = express();
 const userController = require("./src/routes/user-route");
 const userController2 = require("./src/routes/product-route");
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5005;
 
 app.use(express.static("./src/views"));
 
