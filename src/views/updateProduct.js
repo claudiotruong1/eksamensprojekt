@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
-
-
   
   const idLoaded = urlParams.get("id");
   
@@ -13,26 +11,33 @@ document.addEventListener("DOMContentLoaded", () => {
  
   const categoryLoaded = urlParams.get("category");
   document.getElementById("category").value = categoryLoaded;
-
-  document.getElementById("update").addEventListener("submit", (event) => {
+// update
+  document.getElementById("update-products").addEventListener("submit", (event) => {
     event.preventDefault();
 
 
     const product = document.getElementById("product").value;
     const price = document.getElementById("price").value;
     const category = document.getElementById("category").value;
+// slet nedenstående
+    const params = new URL (location.href).searchParams;
+    const urlId = params.get("id");
+    const urlProduct = params.get("product");
+    const urlPrice = params.get("price");
+// slet nedenstående 
+  //  id.value = urlId
+   // product.value = urlProduct
+  //  price.value = urlPrice
+    
 
-    /*
-    const urlId     = params.get('id');
-    const urlProduct = params.get('product');
-    const urlPrice = params.get('price');
+    // document.getElementById("update-products").addEventListener("submit", (event) => {
+     // event.preventDefault();
 
-    product.value = urlProduct
-    price.value = urlPrice
-    */
 
-    document.getElementById("update").addEventListener("submit", (event) => {
-      event.preventDefault();
+
+      //slet nedenstående
+     // const currentProduct = product.value
+     // const currentPrice = price.value
 
     const payload = {
       id: idLoaded,
@@ -42,8 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     };
 
-      // let currentProduct = product.value
-      // let currentPrice = price.value
+    
 /*
        const payload = {
            "id": urlId,
@@ -52,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
        }
        */
 
-       fetch("http://localhost:5005/products/update", {
+       fetch("http://localhost:8005/products/update", {
            method: "POST",
            headers: {
                "Content-Type": "application/json"
@@ -71,4 +75,6 @@ document.addEventListener("DOMContentLoaded", () => {
        });
     });
   });
-  });
+ // });
+
+ // gem denne
