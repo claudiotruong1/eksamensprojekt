@@ -7,7 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-
+<style>
+    table, td {
+      border: 1px solid black;
+    }
+    </style>
 <body>
     <title> addProduct</title>
     <div class="main">
@@ -26,20 +30,22 @@
         <br><br>
         <input type="submit" value="Tilføj">
         </form>
-        <p>Vil du fjerne din vare?</p>
+        <p>Vil du fjerne din vare? Klik på knappen nedenfor:</p>
         <form id="delete">
             <input value="Slet vare" type="submit">
         </form>
         <br>
+        <p>Her kan du se alle varer til salg:</p>
         <table id="varer">
             <tr>
                 <th>Produkt</th>
                 <th>Pris</th>
                 <th>Kategori</th>
                 <th>Billede</th>
-                <th>Handlinger</th>
+                <th>Opdater vare</th>
             </tr>
         </table>
+        <p>Klik på knappen nedenfor, hvis du ønsker at vende tilbage til login siden:</p>
         <a href="index.html"> Hjem</a>
 
     <form id="delete">
