@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  fetch("http://localhost:5005/products/getAllProducts", {
+  fetch("http://localhost:7000/products/getAllProducts", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -32,16 +32,16 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const picture = document.getElementById("picture").value;
 
     var id = Math.floor(Math.random() * 100000)
-
+    
     const payload = {
-      id: id,
+      id: id.toString(), // gem id som streng
       product: product,
       price: price,
       category: category,
-      picture: picture,
+      picture: './product.png',
     };
 
-    fetch("http://localhost:5005/products/create", {
+    fetch("http://localhost:7000/products/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
