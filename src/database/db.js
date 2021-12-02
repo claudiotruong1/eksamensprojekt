@@ -1,4 +1,5 @@
 var fs = require("fs");
+const { runInThisContext } = require("vm");
 
 const PATH = __dirname + "/../../data";
 const userFile = "/users.json";
@@ -29,6 +30,23 @@ class dataBase {
 
   findUser(user) {
     return this.users.find((x) => user.email == x.email);
+  }
+
+  updateUser(user) {
+
+    var keys = Object.keys(this.users);
+    var usersArray = this.users
+
+    keys.forEach(function(objKey){
+        var objValue = usersArray[objKey]
+
+        if(objValue.email === user.email) {
+            objValue.email = prod.email
+            objValue.password = prod.password
+        }
+    })
+
+    this.saveFile(userFile, JSON.stringify(usersArray));
   }
 }
 module.exports = new dataBase();
