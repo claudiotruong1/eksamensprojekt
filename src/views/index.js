@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
       const user = JSON.parse(localStorage.getItem("user"));
   
-      fetch("http://localhost:5005/users/delete", {
+      fetch("http://localhost:7000/users/delete", {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",
@@ -37,8 +37,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
         location.href ="/login.html";
 
     };
-        });
-             });
+  });
+
+  document.getElementById("opdater").addEventListener("click", (event) => {
+    //event.preventDefault();
+    const urlParams = new URLSearchParams(window.location.search);
+    const emailLoaded = urlParams.get("email");
+
+    console.log(emailLoaded)
+    location.href = `/updateUser.html?email=${emailLoaded}`;
+  });
+});
 
 
 
