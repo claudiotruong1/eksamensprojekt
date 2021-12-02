@@ -42,6 +42,7 @@ class dataBase {
             if(objValue.id === prod.id) {
                 objValue.product = prod.product
                 objValue.price = prod.price
+                objValue.category = prod.category
             }
         })
 
@@ -50,6 +51,23 @@ class dataBase {
 
     getProducts() {
         return this.products
+    }
+
+    getSpecificProducts(cat) {
+
+        var keys = Object.keys(this.products);
+        var prodsArray = this.products
+        var matches = []
+
+        keys.forEach(function(objKey){
+            var objValue = prodsArray[objKey]
+
+            if(objValue.category === cat) {
+                matches.push(objValue)
+            }
+        })
+
+        return matches
     }
 };
 
