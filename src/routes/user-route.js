@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const userModel = require("../userform/user");
-const db = require("../database/db"); // vi henter vores db fil 
+const db = require("../database/db"); // vi henter vores db fil
 
 // Et endpoint som kan tilføje en bruger
 router.post("/create", (req, res) => {
@@ -10,7 +10,8 @@ router.post("/create", (req, res) => {
   res.status(200).send(true); // her giver et svar tilbage til brugeren, som sender et request
 });
 
-router.delete("/delete", (req, res) => { // vi laver en route, som befinder sig i en arrow function
+router.delete("/delete", (req, res) => {
+  // vi laver en route, som befinder sig i en arrow function
   const user = new userModel(req.body.id, req.body.email, req.body.password);
   db.deleteUser(user); // en function som blot slette en bruger ud fra email - mere præcist - hvis emailen er den samme slettes brugeren
   res.status(200).send(true); // vi returnerer et svar til brugeren om, at deres request lykkedes
@@ -19,9 +20,10 @@ router.delete("/delete", (req, res) => { // vi laver en route, som befinder sig 
 // vi laver et post endpoint
 router.post("/login", (req, res) => {
   const user = new userModel(req.body.id, req.body.email, req.body.password);
-  const found = db.findUser(user); // vi finder vores user 
+  const found = db.findUser(user); // vi finder vores user
   if (found) {
-    if (user.password == found.password) { // hvis både user password stemmer overens med den fundne password 
+    if (user.password == found.password) {
+      // hvis både user password stemmer overens med den fundne password
       res.status(200).send(true); // så sender vi et status svar tilbage til brugeren om, at de er fundet i systemet
     } else {
       res.status(401).send(false); // hvis ikke password stemmer overens, sender vi en fejlbesked om at brugerens request ikke kan gennemføres
@@ -36,6 +38,5 @@ router.post("/update", (req, res) => {
   db.updateUser(user);
   res.status(200).send(true);
 });
-
 
 module.exports = router;
