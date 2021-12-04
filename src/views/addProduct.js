@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         html += `<td>${elem.price}</td>`;
         html += `<td>${elem.category}</td>`;
         html += `<td><img src="${elem.picture}" width="60" height="30"></td>`
-        html += `<td><a href="updateProduct.html?id=${elem.id}&product=${elem.product}&price=${elem.price}&category=${elem.category}">Update</a></td>`;
+        html += `<td><a href="updateProduct.html?id=${elem.id}&product=${elem.product}&price=${elem.price}&category=${elem.category}">Opdater vare</a></td>`;
         html += "</tr>";
         document.getElementById("varer").innerHTML += html;
       });
