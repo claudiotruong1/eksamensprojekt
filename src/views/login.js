@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    const user = localStorage.getItem("user"); // autorisation
-    if (user) {
-      location.href = "/";
+    const user = localStorage.getItem("user"); // vi ønsker at vi vores item fra vores key, som er user
+    if (user) { // hvis der findes en user 
+      location.href = "/"; // bliver vi sendt til index html siden
     }
   
     document.getElementById("form").addEventListener("submit", (event) => {
@@ -26,14 +26,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
         .then((response) => {
           if (response) {
 
-            localStorage.setItem("user", JSON.stringify(user));
+            localStorage.setItem("user", JSON.stringify(user)); // vi laver en ny række i locastorage, som indeholder to argumenter, som er hhv. key ("user") og value (vores json objekt). 
             location.href = `/?email=${email}`;
           } else {
-            window.alert("Ugyldig e-mailadresse eller adgangskode.");
+            window.alert("Ugyldig e-mailadresse eller adgangskode."); // hvis brugeren skriver noget forkert, udfører vi en window alert at oplysningerne er forkerte
           }
         })
-        .catch(() => {
-          window.alert("Noget gik galt.");
+        .catch(() => { // her "fanger" vi eventuelle fejl
+          window.alert("Noget gik galt."); // hvis noget går galt, fortæller vi brugeren, at noget er gået galt via en window alert
         });
     });
   });
