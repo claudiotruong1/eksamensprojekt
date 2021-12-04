@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
   
   const idLoaded = urlParams.get("id");
   
+  //const product = document.getElementById("product");
+  //const price = document.getElementById("price");
+  //const category = document.getElementById("category");
+
   const productLoaded = urlParams.get("product");
   document.getElementById("product").value = productLoaded;
  
@@ -11,52 +15,23 @@ document.addEventListener("DOMContentLoaded", () => {
  
   const categoryLoaded = urlParams.get("category");
   document.getElementById("category").value = categoryLoaded;
+
 // update
   document.getElementById("update-products").addEventListener("submit", (event) => {
     event.preventDefault();
 
-
     const product = document.getElementById("product").value;
     const price = document.getElementById("price").value;
     const category = document.getElementById("category").value;
-// slet nedenstående
-    const params = new URL (location.href).searchParams;
-    const urlId = params.get("id");
-    const urlProduct = params.get("product");
-    const urlPrice = params.get("price");
-// slet nedenstående 
-  //  id.value = urlId
-   // product.value = urlProduct
-  //  price.value = urlPrice
-    
-
-    // document.getElementById("update-products").addEventListener("submit", (event) => {
-     // event.preventDefault();
-
-
-
-      //slet nedenstående
-     // const currentProduct = product.value
-     // const currentPrice = price.value
-
+      
     const payload = {
       id: idLoaded,
       product: product,
       price: price,
       category: category
-
     };
 
-    
-/*
-       const payload = {
-           "id": urlId,
-           "product": currentProduct,
-           "price": currentPrice
-       }
-       */
-
-       fetch("http://localhost:8005/products/update", {
+       fetch("http://localhost:7000/products/update", {
            method: "POST",
            headers: {
                "Content-Type": "application/json"
@@ -66,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
        //.then((response) => response.json())
        .then((response) => {
            if(response) {
-               window.alert("Congrats!")
+               window.alert("Tillykke! Du har netop opdateret din vare.")
                location.href = "/addProduct.html";
            }
        })
@@ -74,7 +49,5 @@ document.addEventListener("DOMContentLoaded", () => {
            window.alert("Error.")
        });
     });
-  });
- // });
-
- // gem denne
+ });
+ 
