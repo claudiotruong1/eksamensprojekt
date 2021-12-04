@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .then((response) => response.json())
     .then((response) => {
       console.log(response);
-      response.forEach((elem) => {
+      response.forEach((elem) => { // For-each løkke som lægger indsætter vores produkt variable, og lægger nye variable til så snart den findet et 
         var html = "<tr>";
         html += `<td>${elem.product}</td>`;
         html += `<td>${elem.price}</td>`;
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const category = document.getElementById("category").value;
     const picture = document.getElementById("picture").value;
 
-    var id = Math.floor(Math.random() * 100000)
+    var id = Math.floor(Math.random() * 100000) // vi genererer et unikt id med et unikt nummer
     
     const payload = {
       id: id.toString(), // gemmer id som en streng
@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       headers: {
         "Content-Type": "application/json", // Vi fortæller serveren, at vores body er en json
       },
-      body: JSON.stringify(payload), // 
+      body: JSON.stringify(payload), //vi omdanner payload til en streng
     })
       .then((response) => response.json())
       .then((response) => {
