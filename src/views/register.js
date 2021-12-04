@@ -4,14 +4,15 @@ document.addEventListener("DOMContentLoaded", (event) => {
   
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
+      const userId = (Math.floor(Math.random() * 100000))
   
       const user = {
-        id: Math.floor(Math.random() * 100000),
+        id: userId.toString(),
         email: email,
         password: password
       };
   
-      fetch("http://localhost:5005/users/create", {
+      fetch("http://localhost:7000/users/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
