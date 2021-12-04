@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const urlParams = new URLSearchParams(window.location.search);
+  const urlParams = new URLSearchParams(window.location.search); // vi laver en variabel, som indeholder de parsede søgeparametre
   const emailLoaded = urlParams.get("email");
 
-// update
+
   document.getElementById("update-products").addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const password = document.getElementById("newPassword").value;
       
     const payload = {
-      email: email, // email /= emailLoaded
+      email: email, 
       password: password
     };
 
@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
            },
            body: JSON.stringify(payload),
        })
-       //.then((response) => response.json())
        .then((response) => {
            if(response) {
                window.alert("Congrats!")
