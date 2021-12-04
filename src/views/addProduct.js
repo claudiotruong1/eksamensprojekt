@@ -1,8 +1,11 @@
+// vi anvender addEventListener for at bruge vores input til at gøre noget nyt
 document.addEventListener("DOMContentLoaded", (event) => {
+    
+    // vi kalder på vores URL, og herefter giver den vores ønskede metode, som er "GET"
   fetch("http://localhost:7000/products/getAllProducts", {
     method: "GET",
     headers: {
-      "Content-Type": "application/json",
+      "Content-Type": "application/json", 
     },
   })
     .then((response) => response.json())
@@ -23,8 +26,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
       window.alert("Noget gik galt.");
     });
 
+    // vi tager fat i vores form fra html filen, og herefter reagerer på vores submit
   document.getElementById("products").addEventListener("submit", (event) => {
-    event.preventDefault();
+    event.preventDefault(); // den stopper html siden med at genindlæse
 
     const product = document.getElementById("product").value;
     const price = document.getElementById("price").value;
@@ -34,7 +38,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     var id = Math.floor(Math.random() * 100000)
     
     const payload = {
-      id: id.toString(), // gem id som streng
+      id: id.toString(), // gemmer id som en streng
       product: product,
       price: price,
       category: category,
@@ -44,9 +48,9 @@ document.addEventListener("DOMContentLoaded", (event) => {
     fetch("http://localhost:7000/products/create", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", // Vi fortæller serveren, at vores body er en json
       },
-      body: JSON.stringify(payload),
+      body: JSON.stringify(payload), // 
     })
       .then((response) => response.json())
       .then((response) => {
