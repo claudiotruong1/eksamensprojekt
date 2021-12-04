@@ -3,6 +3,7 @@
 
 <head>
     <script src="addProduct.js"></script>
+    <link rel="stylesheet" href="style.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,10 +14,11 @@
     }
     </style>
 <body>
+    <div class="center3"></div>
     <title> addProduct</title>
     <div class="main">
-        <h1>Opret en vare</h1>
-        <p class="addProduct">Tilføj en vare ved at udfylde felterne</p>
+    <center> <h1>Opret en vare</h1></center>
+      <center> <p class="addProduct">Tilføj en vare ved at udfylde felterne</p>
         <form id="products">
         <input class="product" placeholder="Vare" id="product">
         <input class="price" placeholder="Pris" id="price">
@@ -28,12 +30,14 @@
         </select>
         <input class="picture" id="picture" type="file" accept="image/*">
         <br><br>
-        <input type="submit" value="Tilføj">
+        <input type="submit" value="Tilføj vare">
         </form>
         <p>Vil du fjerne din vare? Klik på knappen nedenfor:</p>
         <form id="delete">
             <input value="Slet vare" type="submit">
         </form>
+        <p>Ønsker du at se alle vare for en given kategori? Klik på knappen nedenfor:</p>
+        <button  type="button" onclick="location.href='showCategory.html';"> Vis varer</button>
         <br>
         <p>Her kan du se alle varer til salg:</p>
         <table id="varer">
@@ -45,13 +49,8 @@
                 <th>Opdater vare</th>
             </tr>
         </table>
-        <p>Klik på knappen nedenfor, hvis du ønsker at vende tilbage til login siden:</p>
-        <a href="index.html"> Hjem</a>
-
-    <form id="delete">
-      <input value="Delete" type="submit" />
+        <p class="Hjem">Klik<a href="index.html"> her! </a> for at vende hjem. </p>
     </form>
-
+</center>
 </body>
-
 </html>
