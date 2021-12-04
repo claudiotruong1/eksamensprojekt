@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-    const user = localStorage.getItem("user");
+    const user = localStorage.getItem("user"); // autorisation
     if (user) {
       location.href = "/";
     }
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         password: password,
       };
   
-      fetch("http://localhost:5005/users/login", {
+      fetch("http://localhost:7000/users/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
           if (response) {
 
             localStorage.setItem("user", JSON.stringify(user));
-            location.href = "/";
+            location.href = `/?email=${email}`;
           } else {
             window.alert("Ugyldig e-mailadresse eller adgangskode.");
           }
