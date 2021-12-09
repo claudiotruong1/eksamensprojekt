@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     location.href = "/login.html"; // bliver man sendt tilbage til login html siden, da vedkommende ikke er logget ind
   }
   // vi finder vores "delete" form, og herefter for xx
-  document.getElementById("delete").addEventListener("submit", (event) => {
+  document.getElementById("delete").addEventListener("submit", (event) => {a
     // vi laver en arrow function
     event.preventDefault(); // xx
 
