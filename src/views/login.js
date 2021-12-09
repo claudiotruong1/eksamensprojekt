@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", (event) => {
-  const user = localStorage.getItem("user"); // vi ønsker at vi vores item fra vores key, som er user
+  const user = localStorage.getItem("user"); // vi ønsker at få vores item fra vores key, som er user
   if (user) {
     // hvis der findes en user
     location.href = "/"; // bliver vi sendt til index html siden
