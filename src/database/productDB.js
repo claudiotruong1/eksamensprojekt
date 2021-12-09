@@ -35,7 +35,7 @@ class dataBase {
   }
   // vi laver en funktion, som kan opdatere en brugers produkter
   updateProduct(prod) {
-    var keys = Object.keys(this.products); // vi laver en variabel, som kan returnere et array, som indeholder elementer, som er strenge, og som svarer til de egenskaber vi har i vores objekt
+    var keys = Object.keys(this.products); // vi laver en variabel, som kan returnere et array, som indeholder elementer, som er strenge, og som svarer til de parametre vi har i vores objekt
     var prodsArray = this.products;
 
     keys.forEach(function (objKey) {
