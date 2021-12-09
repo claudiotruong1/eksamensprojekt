@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     .then((response) => {
       console.log(response);
       response.forEach((elem) => {
-        // For-each løkke som lægger indsætter vores produkt variable, og lægger nye variable til så snart den findet et
+        // For-each løkke som indsætter vores produkts variable, og lægger nye variable til så snart den findet et
         var html = "<tr>";
         html += `<td>${elem.product}</td>`;
         html += `<td>${elem.price}</td>`;
