@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
       product: product,
       price: price,
       category: category,
-      picture: "./product.png",
+      picture: "./kande.png",
     };
 
     fetch("http://localhost:7000/products/create", {
